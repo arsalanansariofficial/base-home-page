@@ -51,6 +51,9 @@ main {
 }
 
 header {
+  scale: 0;
+  animation: appear 500ms ease-in-out forwards 2000ms;
+
   & > img {
     margin: 2em;
     max-width: 7em;
@@ -93,7 +96,6 @@ header {
   text-align: center;
 
   @media (min-width: 55em) {
-    background: url('./assets/images/bg-pattern-desktop.svg');
     padding: 3em 0;
     text-align: left;
   }
@@ -105,6 +107,8 @@ header {
 
 .hero_brand {
   display: none;
+  scale: 0;
+  animation: appear 500ms ease-in-out forwards;
 
   @media (min-width: 55em) {
     display: block;
@@ -122,6 +126,8 @@ header {
   line-height: 1.1;
   margin-inline: auto;
   max-width: min-content;
+  scale: 0;
+  animation: appear 500ms ease-in-out forwards 500ms;
 
   & > span {
     color: var(--Desaturated-Red);
@@ -140,6 +146,8 @@ header {
   font-weight: var(--fw-400);
   margin-top: 1em;
   display: inline-block;
+  scale: 0;
+  animation: appear 500ms ease-in-out forwards 1000ms;
 
   @media (min-width: 55em) {
     line-height: 1.5;
@@ -149,6 +157,9 @@ header {
 }
 
 .hero_form {
+  scale: 0;
+  animation: appear 500ms ease-in-out forwards 1500ms;
+
   @media (min-width: 55em) {
     margin: 2em 0 0 5rem;
   }
@@ -224,5 +235,17 @@ header {
     @media (min-width: 55em) {
       padding: 1em 3em;
     }
+  }
+}
+
+@keyframes appear {
+  0% {
+    scale: 0;
+  }
+  50% {
+    scale: 1.1;
+  }
+  100% {
+    scale: 1;
   }
 }
